@@ -28,24 +28,24 @@ spec:
           readinessProbe:
             exec:
               command: ["mongosh", "--eval", "db.adminCommand('ping')"]
-            initialDelaySeconds: 10
+            initialDelaySeconds: 60 #10
             periodSeconds: 5
-            timeoutSeconds: 5
-            failureThreshold: 3
+            timeoutSeconds: 10 #5
+            failureThreshold: 6 #3
           livenessProbe:
             exec:
               command: ["mongosh", "--eval", "db.adminCommand('ping')"]
-            initialDelaySeconds: 15
+            initialDelaySeconds: 60 #15
             periodSeconds: 10
-            timeoutSeconds: 5
-            failureThreshold: 3
+            timeoutSeconds: 10 #5
+            failureThreshold: 6 #3
           resources:
             requests:
               cpu: 100m
-              memory: 256Mi
+              memory: 512Mi #256Mi
             limits:
-              cpu: 500m
-              memory: 512Mi
+              cpu: 800m #500m
+              memory: 1Gi #512Mi
       volumes:
         - name: data
           persistentVolumeClaim:
