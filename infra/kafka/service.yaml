@@ -4,6 +4,7 @@ metadata:
   name: kafka
   namespace: inno
 spec:
+  publishNotReadyAddresses: true
   selector:
     app: kafka
   ports:
