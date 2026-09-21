@@ -35,7 +35,7 @@ spec:
             - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
               value: org.springframework.kafka.support.serializer.JsonSerializer
             - name: RANDOM_NUMBER_API_URL
-              value: https://www.random.org/integers
+              value: https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
